@@ -13,6 +13,5 @@ public class App {
         Settings setting1 = constructor.newInstance();
 
         System.out.println(settings == setting1);
-
     }
 }
