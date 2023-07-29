@@ -1,11 +1,18 @@
 package designpatterns.creational_patterns.singleton;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         Settings settings = Settings.getInstance();
-        Settings settings2 = Settings.getInstance();
-        System.out.println(settings == Settings.getInstance());
-        System.out.println(settings == settings2);
+
+        Constructor<Settings> constructor = Settings.class.getDeclaredConstructor();
+        constructor.setAccessible(true);
+        Settings setting1 = constructor.newInstance();
+
+        System.out.println(settings == setting1);
+
     }
 }
