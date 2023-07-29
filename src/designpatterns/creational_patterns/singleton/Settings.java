@@ -1,6 +1,8 @@
 package designpatterns.creational_patterns.singleton;
 
-public class Settings {
+import java.io.Serializable;
+
+public class Settings implements Serializable {
 
     private Settings() {
 
@@ -14,7 +16,12 @@ public class Settings {
         return SettingsHolder.INSTANCE;
     }
 
+    protected Object readResolve() {
+        return getInstance();
+    }
+
     /**
+     * thread safety하게 구현
      * 1. synchronized
      * 2. 이른 초기화
      * 3. double checked locking
