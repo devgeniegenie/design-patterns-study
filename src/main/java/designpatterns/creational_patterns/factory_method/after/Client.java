@@ -8,8 +8,8 @@ public class Client {
         client.print(new BlackshipFactory(), "blackship", "bbb@mail.com");
     }
 
-    private void print(ShipFactory whiteshipFactory, String name, String email) {
-        System.out.println(whiteshipFactory.orderShip(name, email));
+    private void print(ShipFactory shipFactory, String name, String email) {
+        System.out.println(shipFactory.orderShip(name, email));
     }
 
 }

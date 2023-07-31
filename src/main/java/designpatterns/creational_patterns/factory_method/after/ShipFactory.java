@@ -12,6 +12,8 @@ public interface ShipFactory {
 
     Ship createShip();
 
+    void sendEmailTo(String email, Ship ship);
+
     private void validate(String name, String email) {
         if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("배 이름을 지어주세요.");
@@ -21,11 +23,7 @@ public interface ShipFactory {
         }
     }
 
-    private static void prepareFor(String name) {
+    private void prepareFor(String name) {
         System.out.println(name + " 만들 준비 중");
-    }
-
-    private static void sendEmailTo(String email, Ship ship) {
-        System.out.println(ship.getName() + " 다 만들었습니다.");
     }
 }
