@@ -1,0 +1,18 @@
+package designpatterns.creational_patterns.builder.java;
+
+import lombok.Builder;
+
+@Builder
+public class LombokExample {
+    private String title;
+    private int night;
+    private int days;
+
+    public static void main(String[] args) {
+        LombokExample trip = LombokExample.builder()
+                .title("여행")
+                .night(2)
+                .days(3)
+                .build();
+    }
+}
